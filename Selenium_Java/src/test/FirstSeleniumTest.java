@@ -17,15 +17,17 @@ public class FirstSeleniumTest {
 	
 	
 	public static void main(String[] args) {
-		setBrowser();
+		//setBrowser("Firefox");
+		setBrowser("Chrome");
 		setBrowserConfig();
 		runTest();
 		
 		
 	}
 	
-	public static void setBrowser() {
-		browser ="Firefox";
+	public static void setBrowser(String _browser) {
+		browser = _browser;
+		//browser ="Firefox";
 	}
 	
 	public static void setBrowserConfig() {
@@ -47,7 +49,7 @@ public class FirstSeleniumTest {
 		//Configuration for Chrome
 		//WebDriver driver = new MarionettDriver();
 		
-		System.setProperty("webdriver.chrome.driver", projectLocation+"lib\\chromedriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", projectLocation+"\\lib\\chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		}
 				
