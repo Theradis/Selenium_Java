@@ -11,10 +11,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class FirstSeleniumTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		//String variable to get path of user.dir  will be usable for program mobility.
+		String projectLocation = System.getProperty("user.dir");
 		
 		//Code for GeckoDriver used for Firefox:  Let application know its using geckodriver and where its located
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Administrator\\GIT REPOSITORY\\Selenium_Java\\Selenium_Java\\doc\\geckoDriver\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", projectLocation+"\\doc\\geckoDriver\\geckodriver.exe");
 		//Code to specify the browser to be used and where the browser is located.
 		System.setProperty("webdriver.firefox.bin", "C:\\Program Files\\Mozilla Firefox\\firefox.exe");
 		
