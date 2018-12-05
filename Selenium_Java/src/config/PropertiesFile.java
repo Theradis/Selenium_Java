@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 
+import test.FirstSeleniumTest;
+
 public class PropertiesFile {
 	
 	//Global Class Variable
@@ -15,6 +17,7 @@ public class PropertiesFile {
 	public static void main(String[] args) {
 		readPropertiesFile();
 		writePropertiesFile();
+		readPropertiesFile();
 	
 	}
 
@@ -29,6 +32,8 @@ public class PropertiesFile {
 			prop.load(input);
 		//Test to show that data is being read...
 			System.out.println(prop.getProperty("browser"));
+			FirstSeleniumTest.browser = prop.getProperty("browser");
+			System.out.println(FirstSeleniumTest.browser);
 		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -43,6 +48,7 @@ public class PropertiesFile {
 			
 			OutputStream output = new FileOutputStream("C:\\\\Users\\\\Administrator\\\\GIT REPOSITORY\\\\Selenium_Java\\\\Selenium_Java\\\\src\\\\config\\\\config.properties");
 			prop.setProperty("browser","Chrome");
+			prop.setProperty("result", "pass");
 			prop.store(output, "changed browser");
 			
 		} catch (Exception e) {

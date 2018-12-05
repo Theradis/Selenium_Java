@@ -4,23 +4,28 @@
 
 package test;
 
+
 //import
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import config.PropertiesFile;
+
 public class FirstSeleniumTest {
 
 	//Public Global Variables
-	static String browser;
+	public static String browser;  //this is public as its used in PropertiesFile.java
 	static WebDriver driver;
 	
 	
 	public static void main(String[] args) {
 		//setBrowser("Firefox");
-		setBrowser("Chrome");
+		//setBrowser("Chrome");
+		PropertiesFile.readPropertiesFile();
 		setBrowserConfig();
 		runTest();
+		PropertiesFile.writePropertiesFile();
 		
 		
 	}
